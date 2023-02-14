@@ -1,0 +1,38 @@
+git add <SROI code>
+git commit -m "Add SROI code"
+git push
+# Set the values of the costs and outcomes
+annual_cost = 1706776.08
+emergency_placements = 18
+atsi_support = 56
+lgbtqi_support = 11
+physical_health_support = 259
+mental_health_support = 393
+aod_support = 284
+harm_to_self_or_others = 121
+fdv_support = 289
+pregnancy_support = 3
+transition_support = 9
+
+# Assign the values of the social impact for each outcome
+emergency_value = 500
+atsi_value = 1000
+lgbtqi_value = 1500
+physical_health_value = 100
+mental_health_value = 200
+aod_value = 300
+harm_value = 2000
+fdv_value = 1000
+pregnancy_value = 500
+transition_value = 5000
+
+# Calculate the social value
+social_value = (emergency_placements * emergency_value) + (atsi_support * atsi_value) + (lgbtqi_support * lgbtqi_value) + (physical_health_support * physical_health_value) + (mental_health_support * mental_health_value) + (aod_support * aod_value) + (harm_to_self_or_others * harm_value) + (fdv_support * fdv_value) + (pregnancy_support * pregnancy_value) + (transition_support * transition_value)
+
+# Calculate the SROI
+sroi = (social_value - annual_cost) / annual_cost
+
+# Print the results
+print("Social Value: $", format(social_value, ",.2f"))
+print("Annual Cost: $", format(annual_cost, ",.2f"))
+print("SROI: ", format(sroi, ".3%"))
